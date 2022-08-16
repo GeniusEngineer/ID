@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرقم القومي</title>
+</head>
+<body>
+    <script>
+        //بناخد رسالة من المستخدم
+        x = prompt('Enter Your Egyptian National ID Card number')
+        //انتهي الأمر
+        //دالة لتعريف المحافظات
+        function Governorate(){
+            switch (y){
+                case '01': console.log('Governorate : Cairo')
+                break;
+                case '02': console.log('Governorate : Alex')
+                break;
+                case '03': console.log('Governorate : Port said')
+                break;
+                case '04': console.log('Governorate : Suiz')
+                break;
+                case '11': console.log('Governorate : Damietta')
+                break;
+                case '12': console.log('Governorate : Dakahlia')
+                break;
+                case '13': console.log('Governorate : Alsharqiah')
+                break;
+                case '14': console.log('Governorate : Qalyubia')
+                break;
+                case '15': console.log('Governorate : Kafr El-Sheikh')
+                break;
+                case '16': console.log('Governorate : Algharbia')
+                break;
+                case '17': console.log('Governorate : Menoufia')
+                break;
+                case '18': console.log('Governorate : Aalbuhayra')
+                break;
+                case '19': console.log('Governorate : Ismailia')
+                break;
+                case '21': console.log('Governorate : Giza')
+                break;
+                case '22': console.log('Governorate : Bani Sweif')
+                break;
+                case '23': console.log('Governorate : Fayoum')
+                break;
+                case '24': console.log('Governorate : Minya')
+                break;
+                case '25': console.log('Governorate : Asyut')
+                break;
+                case '26': console.log('Governorate : Sohag')
+                break;
+                case '27': console.log('Governorate : qana')
+                break;
+                case '28': console.log('Governorate : Aswan')
+                break;
+                case '29': console.log('Governorate : Luxor')
+                break;
+                case '31': console.log('Governorate : The Red Sea')
+                break;
+                case '32': console.log('Governorate : Alwadaa Aljadid')
+                break;
+                case '33': console.log('Governorate : Matruh')
+                break;
+                case '34': console.log('Governorate : North Sinai')
+                break;
+                case '35': console.log('Governorate : South of Sinaa')
+                break;
+                case '88': console.log('Governorate : Outside the republic')
+                break;
+                default :
+                console.log("حضرتك كاتب الرقم الثامن والتاسع خطأ")
+            }
+        }
+        // انتهت الدالة
+        // دالة لتعريف النوع (ذكر / أنثي)
+        function Gender(){
+            switch (y){
+                case '1':
+                case '3':
+                case '5':
+                case '7':
+                case '9':
+                    console.log("Gender : Male")
+                    console.log("Programmed By : Eng Mahmoud Khaled")
+                    break;
+                case '2':
+                case '4':
+                case '6':
+                case '8':
+                    console.log("Gender : Female")
+                    console.log("Programmed By : Eng Mahmoud Khaled")
+                    break;
+                    default:
+                    console.log("حضرتك كاتب الرقم الثالث عشر خطأ")
+            }
+        }
+        // انتهت الدالة
+        if (x.length==14 && !Number.isNaN(Number(x))) {
+            // بقوله لو الشرط تحقق اطبع الرقم الي كتبه
+            console.log(`ID Num : ${x}`)
+            // انتهي الامر
+            //لتحديد عام الولاده
+            y = x.slice(0,1)
+            if (y==2){
+                y = x.slice(1,3)
+                console.log(`Year : 19${y} AD`) //باللاتينية: Anno Domini بعد الميلاد
+            } else if (y==3) {
+                y = x.slice(1,3)
+                console.log(`Year : 20${y} AD`)
+            } else {
+                console.log("Year : حضرتك مولود في قرن غير القرن الثاني والثالث ؟؟")
+            }
+            // انتهي الأمر
+            // لتحديد الشهر
+            m = x.slice(3,5)
+            if (m>=1 && m<=12) {
+                console.log(`Month : ${m}`)
+            } else {
+                console.log("Month : حضرتك كاتب الرقم الرابع والخامس غلط")
+            }
+            // انتهي الأمر
+            // لتحديد اليوم
+            d = x.slice(5,7)
+            if (d>=1 && d<=31) {
+                console.log(`Day : ${d}`)
+            } else {
+                console.log("Day : حضرتك كاتب الرقم السادس والسابع غلط")
+            }
+            // انتهي الأمر
+            // لتحديد المحافظة
+            y = x.slice(7,9)
+            Governorate();
+            // انتهي الأمر
+            // لتحديد النوع (ذكر/أنثي)
+            y = x.slice(12,13)
+            Gender();
+            //انتهي الأمر
+        } else {
+            alert('من فضلك تأكد أن الرقم مكون من 14 رقم فقط ولا يحتوي علي أي حرف')
+        }
+    </script>
+</body>
+</html>
